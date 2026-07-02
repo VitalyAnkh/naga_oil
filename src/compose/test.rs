@@ -1594,7 +1594,7 @@ mod test {
             println!("waiting...");
         }
 
-        let view: &[u8] = &output_buffer.slice(..).get_mapped_range();
+        let view: &[u8] = &output_buffer.slice(..).get_mapped_range().unwrap();
 
         f32::from_le_bytes(view.try_into().unwrap())
     }
